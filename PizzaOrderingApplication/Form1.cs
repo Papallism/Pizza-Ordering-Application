@@ -17,7 +17,9 @@ namespace PizzaOrderingApplication
 
         private static double basePrice = 0;
         private static double extraPrice = 0;
+
         private static int ingredientCount = 0;
+        private static int freeIngredients = 0;
 
         private readonly List<string> sizeText = new()
         {
@@ -68,6 +70,15 @@ namespace PizzaOrderingApplication
         // Display total price
         private void Display_Price()
         {
+            if (ingredientCount > freeIngredients)
+            {
+                extraPrice = (ingredientCount - freeIngredients) * extra;
+            }
+            else
+            {
+                extraPrice = 0;
+            }
+
             textBoxPrice.Text = $"€ {basePrice + extraPrice}";
         }
 
@@ -100,16 +111,19 @@ namespace PizzaOrderingApplication
             {
                 labelFree.Text = $"({freeSmall} free ingredients)";
                 basePrice = priceSmall;
+                freeIngredients = freeSmall;
             }
             if (radioButton.Text.Equals(sizeText[1]))
             {
                 labelFree.Text = $"({freeMedium} free ingredients)";
                 basePrice = priceMedium;
+                freeIngredients = freeMedium;
             }
             if (radioButton.Text.Equals(sizeText[2]))
             {
                 labelFree.Text = $"({freeLarge} free ingredients)";
                 basePrice = priceLarge;
+                freeIngredients = freeLarge;
             }
             Display_Price();
         }
@@ -126,7 +140,6 @@ namespace PizzaOrderingApplication
             {
                 ingredientCount--;
             }
-            extraPrice = ingredientCount * extra;
             Display_Price();
         }
     }
