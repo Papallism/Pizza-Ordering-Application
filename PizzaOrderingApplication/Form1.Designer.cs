@@ -126,6 +126,7 @@ namespace PizzaOrderingApplication
             // 
             this.groupBoxIngredients.Controls.Add(this.flowLayoutPanelIngredients);
             this.groupBoxIngredients.Controls.Add(this.labelIngredients);
+            this.groupBoxIngredients.Enabled = false;
             this.groupBoxIngredients.Location = new System.Drawing.Point(238, 143);
             this.groupBoxIngredients.Name = "groupBoxIngredients";
             this.groupBoxIngredients.Size = new System.Drawing.Size(322, 267);
@@ -154,6 +155,7 @@ namespace PizzaOrderingApplication
             // 
             this.groupBoxDelivery.Controls.Add(this.maskedTextBoxDelivery);
             this.groupBoxDelivery.Controls.Add(this.labelDelivery);
+            this.groupBoxDelivery.Enabled = false;
             this.groupBoxDelivery.Location = new System.Drawing.Point(587, 143);
             this.groupBoxDelivery.Name = "groupBoxDelivery";
             this.groupBoxDelivery.Size = new System.Drawing.Size(147, 80);
@@ -184,6 +186,7 @@ namespace PizzaOrderingApplication
             // 
             this.groupBoxPrice.Controls.Add(this.textBoxPrice);
             this.groupBoxPrice.Controls.Add(this.labelPrice);
+            this.groupBoxPrice.Enabled = false;
             this.groupBoxPrice.Location = new System.Drawing.Point(587, 227);
             this.groupBoxPrice.Name = "groupBoxPrice";
             this.groupBoxPrice.Size = new System.Drawing.Size(147, 80);
@@ -218,6 +221,7 @@ namespace PizzaOrderingApplication
             this.buttonOrder.TabIndex = 8;
             this.buttonOrder.Text = "Place Order";
             this.buttonOrder.UseVisualStyleBackColor = true;
+            this.buttonOrder.Visible = false;
             // 
             // Form1
             // 
