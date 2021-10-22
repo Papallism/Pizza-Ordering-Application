@@ -18,6 +18,38 @@ namespace PizzaOrderingApplication
         private static double basePrice = 0;
         private static double extraPrice = 0;
 
+        private readonly List<string> sizeText = new()
+        {
+            "Small",
+            "Medium",
+            "Large"
+        };
+
+        private readonly List<string> ingredientText = new()
+        {
+            "Pepperoni",
+            "Mushroom",
+            "Onion",
+            "Ham",
+            "Bacon",
+            "Pepper",
+            "Feta",
+            "Olives",
+            "Chicken",
+            "Parmesan",
+            "Mozzarella",
+            "Corn",
+            "Chili",
+            "Jalapeno",
+            "Beef",
+            "Turkey",
+            "Oregano",
+            "Rocket",
+            "Prosciutto",
+            "Blue cheese",
+            "Halloumi"
+        };
+
         public Form1()
         {
             InitializeComponent();
@@ -33,11 +65,6 @@ namespace PizzaOrderingApplication
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var sizeText = new List<string> { "Small", "Medium", "Large" };
-            var ingredientText = new List<string> { "Pepperoni", "Mushroom", "Onion", "Ham", "Bacon", "Pepper", "Feta",
-                                                    "Olives", "Chicken", "Parmesan", "Mozzarella", "Corn", "Chili", "Jalapeno",
-                                                    "Beef", "Turkey", "Oregano", "Rocket", "Prosciutto", "Blue cheese", "Halloumi" };
-
             for (int i = 0; i < sizeText.Count; i++)
             {
                 var radioButton = new RadioButton();
@@ -54,10 +81,23 @@ namespace PizzaOrderingApplication
             }
         }
 
+        // Enable the rest of the GroupBoxes and the Button, and update the free ingredient label
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            //var radioButton = (sender as RadioButton);
             Enable_Elements();
+            var radioButton = (sender as RadioButton);
+            if (radioButton.Text.Equals(sizeText[0]))
+            {
+                labelFree.Text = $"({freeSmall} free ingredients)";
+            }
+            if (radioButton.Text.Equals(sizeText[1]))
+            {
+                labelFree.Text = $"({freeMedium} free ingredients)";
+            }
+            if (radioButton.Text.Equals(sizeText[2]))
+            {
+                labelFree.Text = $"({freeLarge} free ingredients)";
+            }
         }
     }
 }

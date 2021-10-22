@@ -46,6 +46,7 @@ namespace PizzaOrderingApplication
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.labelPrice = new System.Windows.Forms.Label();
             this.buttonOrder = new System.Windows.Forms.Button();
+            this.labelFree = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBoxSize.SuspendLayout();
@@ -124,6 +125,7 @@ namespace PizzaOrderingApplication
             // 
             // groupBoxIngredients
             // 
+            this.groupBoxIngredients.Controls.Add(this.labelFree);
             this.groupBoxIngredients.Controls.Add(this.flowLayoutPanelIngredients);
             this.groupBoxIngredients.Controls.Add(this.labelIngredients);
             this.groupBoxIngredients.Enabled = false;
@@ -223,6 +225,14 @@ namespace PizzaOrderingApplication
             this.buttonOrder.UseVisualStyleBackColor = true;
             this.buttonOrder.Visible = false;
             // 
+            // labelFree
+            // 
+            this.labelFree.AutoSize = true;
+            this.labelFree.Location = new System.Drawing.Point(116, 23);
+            this.labelFree.Name = "labelFree";
+            this.labelFree.Size = new System.Drawing.Size(0, 15);
+            this.labelFree.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -275,6 +285,7 @@ namespace PizzaOrderingApplication
         private System.Windows.Forms.Button buttonOrder;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelSize;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelIngredients;
+        private System.Windows.Forms.Label labelFree;
     }
 }
 
