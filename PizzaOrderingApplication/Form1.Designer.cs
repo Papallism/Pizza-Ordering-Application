@@ -37,6 +37,7 @@ namespace PizzaOrderingApplication
             this.flowLayoutPanelSize = new System.Windows.Forms.FlowLayoutPanel();
             this.labelSize = new System.Windows.Forms.Label();
             this.groupBoxIngredients = new System.Windows.Forms.GroupBox();
+            this.labelFree = new System.Windows.Forms.Label();
             this.flowLayoutPanelIngredients = new System.Windows.Forms.FlowLayoutPanel();
             this.labelIngredients = new System.Windows.Forms.Label();
             this.groupBoxDelivery = new System.Windows.Forms.GroupBox();
@@ -46,7 +47,6 @@ namespace PizzaOrderingApplication
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.labelPrice = new System.Windows.Forms.Label();
             this.buttonOrder = new System.Windows.Forms.Button();
-            this.labelFree = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBoxSize.SuspendLayout();
@@ -136,6 +136,14 @@ namespace PizzaOrderingApplication
             this.groupBoxIngredients.TabStop = false;
             this.groupBoxIngredients.Text = "Ingredients";
             // 
+            // labelFree
+            // 
+            this.labelFree.AutoSize = true;
+            this.labelFree.Location = new System.Drawing.Point(116, 23);
+            this.labelFree.Name = "labelFree";
+            this.labelFree.Size = new System.Drawing.Size(0, 15);
+            this.labelFree.TabIndex = 2;
+            // 
             // flowLayoutPanelIngredients
             // 
             this.flowLayoutPanelIngredients.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -224,14 +232,6 @@ namespace PizzaOrderingApplication
             this.buttonOrder.Text = "Place Order";
             this.buttonOrder.UseVisualStyleBackColor = true;
             this.buttonOrder.Visible = false;
-            // 
-            // labelFree
-            // 
-            this.labelFree.AutoSize = true;
-            this.labelFree.Location = new System.Drawing.Point(116, 23);
-            this.labelFree.Name = "labelFree";
-            this.labelFree.Size = new System.Drawing.Size(0, 15);
-            this.labelFree.TabIndex = 2;
             // 
             // Form1
             // 

@@ -17,6 +17,7 @@ namespace PizzaOrderingApplication
 
         private static double basePrice = 0;
         private static double extraPrice = 0;
+        private static int ingredientCount = 0;
 
         private readonly List<string> sizeText = new()
         {
@@ -55,6 +56,7 @@ namespace PizzaOrderingApplication
             InitializeComponent();
         }
 
+        // Enable GroupBoxes and Button
         private void Enable_Elements()
         {
             groupBoxIngredients.Enabled = true;
@@ -63,6 +65,13 @@ namespace PizzaOrderingApplication
             buttonOrder.Visible = true;
         }
 
+        // Display total price
+        private void Display_Price()
+        {
+            textBoxPrice.Text = $"€ {basePrice + extraPrice}";
+        }
+
+        // Create, name and show controls (radio buttons and check boxes)
         private void Form1_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < sizeText.Count; i++)
@@ -77,6 +86,7 @@ namespace PizzaOrderingApplication
             {
                 var checkBox = new CheckBox();
                 checkBox.Text = ingredientText[i];
+                checkBox.CheckedChanged += CheckBox_CheckedChanged;
                 flowLayoutPanelIngredients.Controls.Add(checkBox);
             }
         }
@@ -89,15 +99,35 @@ namespace PizzaOrderingApplication
             if (radioButton.Text.Equals(sizeText[0]))
             {
                 labelFree.Text = $"({freeSmall} free ingredients)";
+                basePrice = priceSmall;
             }
             if (radioButton.Text.Equals(sizeText[1]))
             {
                 labelFree.Text = $"({freeMedium} free ingredients)";
+                basePrice = priceMedium;
             }
             if (radioButton.Text.Equals(sizeText[2]))
             {
                 labelFree.Text = $"({freeLarge} free ingredients)";
+                basePrice = priceLarge;
             }
+            Display_Price();
+        }
+
+        // Calculate selected ingredients and price accordingly
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            var checkBox = (sender as CheckBox);
+            if (checkBox.Checked)
+            {
+                ingredientCount++;
+            }
+            if (!checkBox.Checked)
+            {
+                ingredientCount--;
+            }
+            extraPrice = ingredientCount * extra;
+            Display_Price();
         }
     }
 }
