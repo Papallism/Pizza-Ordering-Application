@@ -233,6 +233,7 @@ namespace PizzaOrderingApplication
             this.buttonOrder.Text = "Place Order";
             this.buttonOrder.UseVisualStyleBackColor = true;
             this.buttonOrder.Visible = false;
+            this.buttonOrder.Click += new System.EventHandler(this.buttonOrder_Click);
             // 
             // Form1
             // 

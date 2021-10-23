@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mihal\\Desktop\\Pizza-Ordering-Application\\PizzaOrderingApplication\\PizzaOrderingApplication.csproj": {}
+    "C:\\Users\\mihal\\source\\repos\\PizzaOrderingApplication\\PizzaOrderingApplication\\PizzaOrderingApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mihal\\Desktop\\Pizza-Ordering-Application\\PizzaOrderingApplication\\PizzaOrderingApplication.csproj": {
+    "C:\\Users\\mihal\\source\\repos\\PizzaOrderingApplication\\PizzaOrderingApplication\\PizzaOrderingApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mihal\\Desktop\\Pizza-Ordering-Application\\PizzaOrderingApplication\\PizzaOrderingApplication.csproj",
+        "projectUniqueName": "C:\\Users\\mihal\\source\\repos\\PizzaOrderingApplication\\PizzaOrderingApplication\\PizzaOrderingApplication.csproj",
         "projectName": "PizzaOrderingApplication",
-        "projectPath": "C:\\Users\\mihal\\Desktop\\Pizza-Ordering-Application\\PizzaOrderingApplication\\PizzaOrderingApplication.csproj",
+        "projectPath": "C:\\Users\\mihal\\source\\repos\\PizzaOrderingApplication\\PizzaOrderingApplication\\PizzaOrderingApplication.csproj",
         "packagesPath": "C:\\Users\\mihal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mihal\\Desktop\\Pizza-Ordering-Application\\PizzaOrderingApplication\\obj\\",
+        "outputPath": "C:\\Users\\mihal\\source\\repos\\PizzaOrderingApplication\\PizzaOrderingApplication\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\mihal\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

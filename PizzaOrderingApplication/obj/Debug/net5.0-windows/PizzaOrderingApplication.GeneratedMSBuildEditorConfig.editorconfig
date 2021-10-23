@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = PizzaOrderingApplication
-build_property.ProjectDir = C:\Users\mihal\Desktop\Pizza-Ordering-Application\PizzaOrderingApplication\
+build_property.ProjectDir = C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\

@@ -17,6 +17,7 @@ namespace PizzaOrderingApplication
 
         private static double basePrice = 0;
         private static double extraPrice = 0;
+        private static double totalPrice = 0;
 
         private static int ingredientCount = 0;
         private static int freeIngredients = 0;
@@ -58,7 +59,6 @@ namespace PizzaOrderingApplication
         public Form1()
         {
             InitializeComponent();
-            MessageBox.Show("\nTime" + currentTime);
         }
 
         // Enable GroupBoxes and Button
@@ -81,8 +81,8 @@ namespace PizzaOrderingApplication
             {
                 extraPrice = 0;
             }
-
-            textBoxPrice.Text = $"€ {basePrice + extraPrice}";
+            totalPrice = basePrice + extraPrice;
+            textBoxPrice.Text = $"€ {totalPrice}";
         }
 
         // Create, name and show controls (radio buttons and check boxes)
@@ -144,6 +144,48 @@ namespace PizzaOrderingApplication
                 ingredientCount--;
             }
             Display_Price();
+        }
+
+        private void buttonOrder_Click(object sender, EventArgs e)
+        {
+            if (TimeSpan.TryParse(maskedTextBoxDelivery.Text, out TimeSpan deliveryTime))
+            {
+                if (deliveryTime > currentTime)
+                {
+                    var reply = MessageBox.Show($"The total for your pizza is € {totalPrice} (to be delivered at {deliveryTime}), are you sure you want to order?",
+                                                 "Confirm order",
+                                                 MessageBoxButtons.YesNo,
+                                                 MessageBoxIcon.Warning);
+                    if (reply == DialogResult.Yes)
+                    {
+                        MessageBox.Show("Your order is successful!",
+                                        "Order completed",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your order was cancelled",
+                                        "Order cancelled",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The time you gave is in the past. Please give a valid time in the future.",
+                                    "Time in the past",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("The time you gave is invalid. Please give a valid time.",
+                                "Invalid time",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
         }
     }
 }
