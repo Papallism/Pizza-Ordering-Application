@@ -53,9 +53,12 @@ namespace PizzaOrderingApplication
             "Halloumi"
         };
 
+        private readonly TimeSpan currentTime = DateTime.Now.TimeOfDay;
+
         public Form1()
         {
             InitializeComponent();
+            MessageBox.Show("\nTime" + currentTime);
         }
 
         // Enable GroupBoxes and Button
