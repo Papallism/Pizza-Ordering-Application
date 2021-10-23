@@ -55,8 +55,6 @@ namespace PizzaOrderingApplication
             "Halloumi",
         };
 
-        private readonly TimeSpan currentTime = DateTime.Now.TimeOfDay;
-
         public Form1()
         {
             InitializeComponent();
@@ -150,6 +148,8 @@ namespace PizzaOrderingApplication
 
         private void buttonOrder_Click(object sender, EventArgs e)
         {
+            var currentTime = DateTime.Now.TimeOfDay;
+
             if (TimeSpan.TryParse(maskedTextBoxDelivery.Text, out TimeSpan deliveryTime))
             {
                 if (deliveryTime > currentTime)
