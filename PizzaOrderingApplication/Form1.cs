@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace PizzaOrderingApplication
@@ -26,7 +27,7 @@ namespace PizzaOrderingApplication
         {
             "Small",
             "Medium",
-            "Large"
+            "Large",
         };
 
         private readonly List<string> ingredientText = new()
@@ -51,7 +52,7 @@ namespace PizzaOrderingApplication
             "Rocket",
             "Prosciutto",
             "Blue cheese",
-            "Halloumi"
+            "Halloumi",
         };
 
         private readonly TimeSpan currentTime = DateTime.Now.TimeOfDay;
@@ -70,7 +71,7 @@ namespace PizzaOrderingApplication
             buttonOrder.Visible = true;
         }
 
-        // Display total price
+        // Calculate and display total price
         private void Display_Price()
         {
             if (ingredientCount > freeIngredients)
@@ -81,8 +82,9 @@ namespace PizzaOrderingApplication
             {
                 extraPrice = 0;
             }
+
             totalPrice = basePrice + extraPrice;
-            textBoxPrice.Text = $"€ {totalPrice}";
+            textBoxPrice.Text = $"{totalPrice.ToString("C", CultureInfo.CreateSpecificCulture("en-DE"))}";
         }
 
         // Create, name and show controls (radio buttons and check boxes)
@@ -90,7 +92,7 @@ namespace PizzaOrderingApplication
         {
             for (int i = 0; i < sizeText.Count; i++)
             {
-                var radioButton = new RadioButton();
+                RadioButton radioButton = new();
                 radioButton.Text = sizeText[i];
                 radioButton.CheckedChanged += RadioButton_CheckedChanged;
                 flowLayoutPanelSize.Controls.Add(radioButton);
@@ -98,7 +100,7 @@ namespace PizzaOrderingApplication
 
             for (int i = 0; i < ingredientText.Count; i++)
             {
-                var checkBox = new CheckBox();
+                CheckBox checkBox = new();
                 checkBox.Text = ingredientText[i];
                 checkBox.CheckedChanged += CheckBox_CheckedChanged;
                 flowLayoutPanelIngredients.Controls.Add(checkBox);
@@ -152,7 +154,8 @@ namespace PizzaOrderingApplication
             {
                 if (deliveryTime > currentTime)
                 {
-                    var reply = MessageBox.Show($"The total for your pizza is € {totalPrice} (to be delivered at {deliveryTime}), are you sure you want to order?",
+                    var reply = MessageBox.Show($"The total for your pizza is {totalPrice.ToString("C", CultureInfo.CreateSpecificCulture("en-DE"))} " +
+                                                $"(to be delivered at {deliveryTime}), are you sure you want to order?",
                                                  "Confirm order",
                                                  MessageBoxButtons.YesNo,
                                                  MessageBoxIcon.Warning);

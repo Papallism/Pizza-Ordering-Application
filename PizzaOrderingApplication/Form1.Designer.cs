@@ -100,19 +100,21 @@ namespace PizzaOrderingApplication
             // 
             this.groupBoxSize.Controls.Add(this.flowLayoutPanelSize);
             this.groupBoxSize.Controls.Add(this.labelSize);
-            this.groupBoxSize.Location = new System.Drawing.Point(64, 143);
+            this.groupBoxSize.Location = new System.Drawing.Point(60, 143);
             this.groupBoxSize.Name = "groupBoxSize";
-            this.groupBoxSize.Size = new System.Drawing.Size(147, 164);
+            this.groupBoxSize.Size = new System.Drawing.Size(151, 164);
             this.groupBoxSize.TabIndex = 4;
             this.groupBoxSize.TabStop = false;
             this.groupBoxSize.Text = "Size";
             // 
             // flowLayoutPanelSize
             // 
+            this.flowLayoutPanelSize.AutoSize = true;
             this.flowLayoutPanelSize.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelSize.Location = new System.Drawing.Point(6, 41);
+            this.flowLayoutPanelSize.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanelSize.Name = "flowLayoutPanelSize";
-            this.flowLayoutPanelSize.Size = new System.Drawing.Size(135, 107);
+            this.flowLayoutPanelSize.Size = new System.Drawing.Size(141, 117);
             this.flowLayoutPanelSize.TabIndex = 9;
             // 
             // labelSize
