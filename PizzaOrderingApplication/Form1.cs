@@ -7,16 +7,14 @@ namespace PizzaOrderingApplication
 {
     public partial class Form1 : Form
     {
-        // Constant base price for all sizes and for every extra ingredient
-        private const double priceSmall = 5.5;
+        private PizzaSettingsForm settingsForm = new PizzaSettingsForm();
 
+        private const double priceSmall = 5.5;
         private const double priceMedium = 11.75;
         private const double priceLarge = 15.0;
         private const double extra = 0.75;
 
-        // Constant free ingredients for each size
         private const int freeSmall = 2;
-
         private const int freeMedium = 3;
         private const int freeLarge = 4;
 
@@ -193,6 +191,11 @@ namespace PizzaOrderingApplication
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
+        }
+
+        private void buttonSettings_Click(object sender, EventArgs e)
+        {
+            settingsForm.ShowDialog();
         }
     }
 }

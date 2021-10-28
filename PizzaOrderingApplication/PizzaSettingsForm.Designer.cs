@@ -133,7 +133,7 @@ namespace PizzaOrderingApplication
             this.Controls.Add(this.groupBoxToppingsSettings);
             this.Controls.Add(this.groupBoxSizeSettings);
             this.Name = "PizzaSettingsForm";
-            this.Text = "PizzaSettingsForm";
+            this.Text = "Settings Window";
             this.groupBoxSizeSettings.ResumeLayout(false);
             this.groupBoxToppingsSettings.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSizeSettings)).EndInit();
