@@ -7,21 +7,25 @@ namespace PizzaOrderingApplication
 {
     public partial class Form1 : Form
     {
+        // Constant base price for all sizes and for every extra ingredient
         private const double priceSmall = 5.5;
+
         private const double priceMedium = 11.75;
         private const double priceLarge = 15.0;
         private const double extra = 0.75;
 
+        // Constant free ingredients for each size
         private const int freeSmall = 2;
+
         private const int freeMedium = 3;
         private const int freeLarge = 4;
 
-        private static double basePrice = 0;
-        private static double extraPrice = 0;
-        private static double totalPrice = 0;
+        private double basePrice = 0;
+        private double extraPrice = 0;
+        private double totalPrice = 0;
 
-        private static int ingredientCount = 0;
-        private static int freeIngredients = 0;
+        private int ingredientCount = 0;
+        private int freeIngredients = 0;
 
         private readonly List<string> sizeText = new()
         {
@@ -60,7 +64,7 @@ namespace PizzaOrderingApplication
             InitializeComponent();
         }
 
-        // Enable GroupBoxes and Button
+        // Function to enable GroupBoxes and Button
         private void Enable_Elements()
         {
             groupBoxIngredients.Enabled = true;
@@ -69,7 +73,7 @@ namespace PizzaOrderingApplication
             buttonOrder.Visible = true;
         }
 
-        // Calculate and display total price
+        // Function to calculate and display total price
         private void Display_Price()
         {
             if (ingredientCount > freeIngredients)
@@ -85,7 +89,7 @@ namespace PizzaOrderingApplication
             textBoxPrice.Text = $"{totalPrice.ToString("C", CultureInfo.CreateSpecificCulture("en-DE"))}";
         }
 
-        // Create, name and show controls (radio buttons and check boxes)
+        // Function to create, name and show controls (radio buttons and check boxes)
         private void Form1_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < sizeText.Count; i++)
