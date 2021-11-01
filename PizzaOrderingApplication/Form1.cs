@@ -90,18 +90,18 @@ namespace PizzaOrderingApplication
         // Function to create, name and show controls (radio buttons and check boxes)
         private void Form1_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < sizeText.Count; i++)
+            foreach (var size in settingsForm.sizes)
             {
-                RadioButton radioButton = new();
-                radioButton.Text = sizeText[i];
+                var radioButton = new RadioButton();
+                radioButton.Text = size.Name;
                 radioButton.CheckedChanged += RadioButton_CheckedChanged;
                 flowLayoutPanelSize.Controls.Add(radioButton);
             }
 
-            for (int i = 0; i < ingredientText.Count; i++)
+            foreach (var topping in settingsForm.toppings)
             {
-                CheckBox checkBox = new();
-                checkBox.Text = ingredientText[i];
+                var checkBox = new CheckBox();
+                checkBox.Text = topping.Name;
                 checkBox.CheckedChanged += CheckBox_CheckedChanged;
                 flowLayoutPanelIngredients.Controls.Add(checkBox);
             }
@@ -146,6 +146,28 @@ namespace PizzaOrderingApplication
                 ingredientCount--;
             }
             Display_Price();
+        }
+
+        public void DisplaySizes()
+        {
+            foreach (var size in settingsForm.sizes)
+            {
+                var radioButton = new RadioButton();
+                radioButton.Text = size.Name;
+                radioButton.CheckedChanged += RadioButton_CheckedChanged;
+                flowLayoutPanelSize.Controls.Add(radioButton);
+            }
+        }
+
+        public void DisplayToppings()
+        {
+            foreach (var topping in settingsForm.toppings)
+            {
+                var checkBox = new CheckBox();
+                checkBox.Text = topping.Name;
+                checkBox.CheckedChanged += CheckBox_CheckedChanged;
+                flowLayoutPanelIngredients.Controls.Add(checkBox);
+            }
         }
 
         private void buttonOrder_Click(object sender, EventArgs e)

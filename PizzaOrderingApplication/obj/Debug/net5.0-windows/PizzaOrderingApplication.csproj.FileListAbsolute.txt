@@ -37,3 +37,4 @@ C:\Users\mihal\Desktop\Pizza-Ordering-Application\PizzaOrderingApplication\obj\D
 C:\Users\mihal\Desktop\Pizza-Ordering-Application\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.pdb
 C:\Users\mihal\Desktop\Pizza-Ordering-Application\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.genruntimeconfig.cache
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.PizzaSettingsForm.resources
+C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
