@@ -32,37 +32,12 @@ namespace PizzaOrderingApplication
             "Large",
         };
 
-        private readonly List<string> ingredientText = new()
-        {
-            "Pepperoni",
-            "Mushroom",
-            "Onion",
-            "Ham",
-            "Bacon",
-            "Pepper",
-            "Feta",
-            "Olives",
-            "Chicken",
-            "Parmesan",
-            "Mozzarella",
-            "Corn",
-            "Chili",
-            "Jalapeno",
-            "Beef",
-            "Turkey",
-            "Oregano",
-            "Rocket",
-            "Prosciutto",
-            "Blue cheese",
-            "Halloumi",
-        };
-
         public Form1()
         {
             InitializeComponent();
         }
 
-        // Function to create, name and show controls (radio buttons and check boxes)
+        // Check for any previously saved data to create and show controls for sizes and toppings
         private void Form1_Load(object sender, EventArgs e)
         {
             DisplaySizes();
@@ -98,6 +73,7 @@ namespace PizzaOrderingApplication
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
             Enable_Elements();
+
             var radioButton = (sender as RadioButton);
             if (radioButton.Text.Equals(sizeText[0]))
             {
@@ -117,6 +93,7 @@ namespace PizzaOrderingApplication
                 basePrice = priceLarge;
                 freeIngredients = freeLarge;
             }
+
             Display_Price();
         }
 
@@ -135,10 +112,13 @@ namespace PizzaOrderingApplication
             Display_Price();
         }
 
+        // Function to create and display controls for sizes
         public void DisplaySizes()
         {
+            // Clear all controls to avoid repetition
             flowLayoutPanelSize.Controls.Clear();
 
+            // Create new controls for every saved size
             foreach (var size in settingsForm.GetPizzaSizes)
             {
                 var radioButton = new RadioButton();
@@ -148,10 +128,13 @@ namespace PizzaOrderingApplication
             }
         }
 
+        // Function to create and display controls for toppings
         public void DisplayToppings()
         {
+            // Clear all controls to avoid repetition
             flowLayoutPanelIngredients.Controls.Clear();
 
+            // Create new controls for every saved topping
             foreach (var topping in settingsForm.GetPizzaToppings)
             {
                 var checkBox = new CheckBox();
@@ -161,6 +144,7 @@ namespace PizzaOrderingApplication
             }
         }
 
+        // Function for when the Order button is clicked
         private void buttonOrder_Click(object sender, EventArgs e)
         {
             var currentTime = DateTime.Now.TimeOfDay;
@@ -206,6 +190,7 @@ namespace PizzaOrderingApplication
             }
         }
 
+        // Function for when the Settings menu item is clicked
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             settingsForm.ShowDialog();
@@ -214,6 +199,7 @@ namespace PizzaOrderingApplication
             DisplayToppings();
         }
 
+        // Function for when the About menu item is clicked
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutWindow aboutWindow = new AboutWindow();

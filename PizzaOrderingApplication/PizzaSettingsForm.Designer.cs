@@ -143,7 +143,6 @@ namespace PizzaOrderingApplication
             this.Name = "PizzaSettingsForm";
             this.Text = "Settings Window";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PizzaSettingsForm_FormClosing);
-            this.Load += new System.EventHandler(this.PizzaSettingsForm_Load);
             this.groupBoxSizeSettings.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSizeSettings)).EndInit();
             this.groupBoxToppingsSettings.ResumeLayout(false);
