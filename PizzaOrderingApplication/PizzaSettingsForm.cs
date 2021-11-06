@@ -15,21 +15,20 @@ namespace PizzaOrderingApplication
         {
             InitializeComponent();
 
-            sizes.Add(new PizzaSize("Small", 5.5, 2));
-            sizes.Add(new PizzaSize("Medium", 7.5, 3));
-            sizes.Add(new PizzaSize("Large", 9.99, 4));
+            string sizesFromJson = ReadSizesFromJson();
+            if (sizesFromJson != null)
+                sizes = JsonConvert.DeserializeObject<List<PizzaSize>>(sizesFromJson);
 
-            toppings.Add(new PizzaTopping("Ham", 0.5));
-            toppings.Add(new PizzaTopping("Bacon", 0.6));
-            toppings.Add(new PizzaTopping("Pepperoni", 0.65));
-            toppings.Add(new PizzaTopping("Salami", 0.5));
+            string toppingsFromJson = ReadToppingsFromJson();
+            if (toppingsFromJson != null)
+                toppings = JsonConvert.DeserializeObject<List<PizzaTopping>>(toppingsFromJson);
+
+            dataGridViewSizeSettings.DataSource = new BindingList<PizzaSize>(sizes);
+            dataGridViewToppingsSettings.DataSource = new BindingList<PizzaTopping>(toppings);
         }
 
         private void PizzaSettingsForm_Load(object sender, System.EventArgs e)
         {
-            dataGridViewSizeSettings.DataSource = new BindingList<PizzaSize>(sizes);
-
-            dataGridViewToppingsSettings.DataSource = new BindingList<PizzaTopping>(toppings);
         }
 
         public void GetSizeData()
@@ -61,6 +60,30 @@ namespace PizzaOrderingApplication
         private void PizzaSettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             MessageBox.Show("Close Settings Form?");
+        }
+
+        private string ReadSizesFromJson()
+        {
+            try
+            {
+                return File.ReadAllText("PizzaSizes.json");
+            }
+            catch (FileNotFoundException)
+            {
+                return null;
+            }
+        }
+
+        private string ReadToppingsFromJson()
+        {
+            try
+            {
+                return File.ReadAllText("PizzaToppings.json");
+            }
+            catch (FileNotFoundException)
+            {
+                return null;
+            }
         }
     }
 }

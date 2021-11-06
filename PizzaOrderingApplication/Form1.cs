@@ -205,8 +205,8 @@ namespace PizzaOrderingApplication
         {
             settingsForm.ShowDialog();
 
-            DisplaySizes();
-            DisplayToppings();
+            //DisplaySizes();
+            //DisplayToppings();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
