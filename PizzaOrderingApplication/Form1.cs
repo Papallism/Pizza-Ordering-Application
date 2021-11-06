@@ -201,7 +201,7 @@ namespace PizzaOrderingApplication
             }
         }
 
-        private void buttonSettings_Click(object sender, EventArgs e)
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             settingsForm.ShowDialog();
 
@@ -212,6 +212,7 @@ namespace PizzaOrderingApplication
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutWindow aboutWindow = new AboutWindow();
+            aboutWindow.Text = "About Window";
             aboutWindow.ShowDialog();
         }
     }

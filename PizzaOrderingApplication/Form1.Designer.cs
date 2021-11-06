@@ -47,7 +47,6 @@ namespace PizzaOrderingApplication
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.labelPrice = new System.Windows.Forms.Label();
             this.buttonOrder = new System.Windows.Forms.Button();
-            this.buttonSettings = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -223,7 +222,7 @@ namespace PizzaOrderingApplication
             // buttonOrder
             // 
             this.buttonOrder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonOrder.Location = new System.Drawing.Point(234, 436);
+            this.buttonOrder.Location = new System.Drawing.Point(325, 436);
             this.buttonOrder.Name = "buttonOrder";
             this.buttonOrder.Size = new System.Drawing.Size(150, 50);
             this.buttonOrder.TabIndex = 8;
@@ -231,17 +230,6 @@ namespace PizzaOrderingApplication
             this.buttonOrder.UseVisualStyleBackColor = true;
             this.buttonOrder.Visible = false;
             this.buttonOrder.Click += new System.EventHandler(this.buttonOrder_Click);
-            // 
-            // buttonSettings
-            // 
-            this.buttonSettings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonSettings.Location = new System.Drawing.Point(417, 436);
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(150, 50);
-            this.buttonSettings.TabIndex = 9;
-            this.buttonSettings.Text = "Settings";
-            this.buttonSettings.UseVisualStyleBackColor = true;
-            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // pictureBox1
             // 
@@ -269,6 +257,7 @@ namespace PizzaOrderingApplication
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -283,7 +272,6 @@ namespace PizzaOrderingApplication
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 513);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.buttonSettings);
             this.Controls.Add(this.buttonOrder);
             this.Controls.Add(this.groupBoxPrice);
             this.Controls.Add(this.groupBoxDelivery);
@@ -334,7 +322,6 @@ namespace PizzaOrderingApplication
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelSize;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelIngredients;
         private System.Windows.Forms.Label labelFree;
-        private System.Windows.Forms.Button buttonSettings;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
