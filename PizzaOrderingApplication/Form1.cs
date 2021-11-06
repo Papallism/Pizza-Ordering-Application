@@ -65,7 +65,8 @@ namespace PizzaOrderingApplication
         // Function to create, name and show controls (radio buttons and check boxes)
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: Load sizes and toppings from JSON
+            DisplaySizes();
+            DisplayToppings();
         }
 
         // Function to enable GroupBoxes and Button
@@ -136,6 +137,8 @@ namespace PizzaOrderingApplication
 
         public void DisplaySizes()
         {
+            flowLayoutPanelSize.Controls.Clear();
+
             foreach (var size in settingsForm.sizes)
             {
                 var radioButton = new RadioButton();
@@ -147,6 +150,8 @@ namespace PizzaOrderingApplication
 
         public void DisplayToppings()
         {
+            flowLayoutPanelIngredients.Controls.Clear();
+
             foreach (var topping in settingsForm.toppings)
             {
                 var checkBox = new CheckBox();
@@ -205,8 +210,8 @@ namespace PizzaOrderingApplication
         {
             settingsForm.ShowDialog();
 
-            //DisplaySizes();
-            //DisplayToppings();
+            DisplaySizes();
+            DisplayToppings();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
