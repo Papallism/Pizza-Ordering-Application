@@ -103,13 +103,13 @@ namespace PizzaOrderingApplication
             // 
             // flowLayoutPanelSize
             // 
-            this.flowLayoutPanelSize.AutoSize = true;
             this.flowLayoutPanelSize.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelSize.Location = new System.Drawing.Point(6, 41);
             this.flowLayoutPanelSize.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanelSize.Name = "flowLayoutPanelSize";
             this.flowLayoutPanelSize.Size = new System.Drawing.Size(141, 117);
             this.flowLayoutPanelSize.TabIndex = 9;
+            this.flowLayoutPanelSize.WrapContents = false;
             // 
             // labelSize
             // 

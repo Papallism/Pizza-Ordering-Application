@@ -28,7 +28,7 @@ namespace PizzaOrderingApplication
         }
 
         // Get data from the JSON file and if it's not empty, get the size objects
-        public void GetSizeData()
+        private void GetSizeData()
         {
             string sizesFromJson = ReadSizesFromJson();
             if (sizesFromJson != null)
@@ -36,7 +36,7 @@ namespace PizzaOrderingApplication
         }
 
         // Get data from the JSON file and if it's not empty, get the topping objects
-        public void GetToppingData()
+        private void GetToppingData()
         {
             string toppingsFromJson = ReadToppingsFromJson();
             if (toppingsFromJson != null)
@@ -46,8 +46,6 @@ namespace PizzaOrderingApplication
         // Save sizes to JSON file
         private void buttonSaveSizes_Click(object sender, System.EventArgs e)
         {
-            GetSizeData();
-
             var allSizesJson = JsonConvert.SerializeObject(sizes);
             File.WriteAllText("PizzaSizes.json", allSizesJson);
 

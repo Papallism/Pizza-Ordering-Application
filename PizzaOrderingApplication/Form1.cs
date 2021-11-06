@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PizzaOrderingApplication
@@ -9,14 +9,7 @@ namespace PizzaOrderingApplication
     {
         private PizzaSettingsForm settingsForm = new PizzaSettingsForm();
 
-        private const double priceSmall = 5.5;
-        private const double priceMedium = 11.75;
-        private const double priceLarge = 15.0;
         private const double extra = 0.75;
-
-        private const int freeSmall = 2;
-        private const int freeMedium = 3;
-        private const int freeLarge = 4;
 
         private double basePrice = 0;
         private double extraPrice = 0;
@@ -24,13 +17,6 @@ namespace PizzaOrderingApplication
 
         private int ingredientCount = 0;
         private int freeIngredients = 0;
-
-        private readonly List<string> sizeText = new()
-        {
-            "Small",
-            "Medium",
-            "Large",
-        };
 
         public Form1()
         {
@@ -75,24 +61,13 @@ namespace PizzaOrderingApplication
             Enable_Elements();
 
             var radioButton = (sender as RadioButton);
-            if (radioButton.Text.Equals(sizeText[0]))
-            {
-                labelFree.Text = $"({freeSmall} free ingredients)";
-                basePrice = priceSmall;
-                freeIngredients = freeSmall;
-            }
-            if (radioButton.Text.Equals(sizeText[1]))
-            {
-                labelFree.Text = $"({freeMedium} free ingredients)";
-                basePrice = priceMedium;
-                freeIngredients = freeMedium;
-            }
-            if (radioButton.Text.Equals(sizeText[2]))
-            {
-                labelFree.Text = $"({freeLarge} free ingredients)";
-                basePrice = priceLarge;
-                freeIngredients = freeLarge;
-            }
+
+            PizzaSize selectedSize = settingsForm.GetPizzaSizes.Where(x => x.Name.Equals(radioButton.Text))
+                                                               .FirstOrDefault();
+
+            labelFree.Text = $"({selectedSize.FreeIngredients} free ingredients)";
+            basePrice = selectedSize.Price;
+            freeIngredients = selectedSize.FreeIngredients;
 
             Display_Price();
         }
@@ -122,7 +97,7 @@ namespace PizzaOrderingApplication
             foreach (var size in settingsForm.GetPizzaSizes)
             {
                 var radioButton = new RadioButton();
-                radioButton.Text = size.Name;
+                radioButton.Text = $"{size.Name} ({size.Price.ToString("C", CultureInfo.CreateSpecificCulture("en-DE"))})";
                 radioButton.CheckedChanged += RadioButton_CheckedChanged;
                 flowLayoutPanelSize.Controls.Add(radioButton);
             }
@@ -195,6 +170,7 @@ namespace PizzaOrderingApplication
         {
             settingsForm.ShowDialog();
 
+            // Update sizes and toppings when settings form is closed
             DisplaySizes();
             DisplayToppings();
         }
