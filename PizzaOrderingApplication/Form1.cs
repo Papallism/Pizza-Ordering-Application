@@ -98,6 +98,7 @@ namespace PizzaOrderingApplication
             {
                 var radioButton = new RadioButton();
                 radioButton.Text = $"{size.Name} ({size.Price.ToString("C", CultureInfo.CreateSpecificCulture("en-DE"))})";
+                radioButton.Width = (TextRenderer.MeasureText(radioButton.Text, radioButton.Font)).Width + 20;
                 radioButton.CheckedChanged += RadioButton_CheckedChanged;
                 flowLayoutPanelSize.Controls.Add(radioButton);
             }

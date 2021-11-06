@@ -94,9 +94,9 @@ namespace PizzaOrderingApplication
             // 
             this.groupBoxSize.Controls.Add(this.flowLayoutPanelSize);
             this.groupBoxSize.Controls.Add(this.labelSize);
-            this.groupBoxSize.Location = new System.Drawing.Point(60, 143);
+            this.groupBoxSize.Location = new System.Drawing.Point(63, 143);
             this.groupBoxSize.Name = "groupBoxSize";
-            this.groupBoxSize.Size = new System.Drawing.Size(151, 164);
+            this.groupBoxSize.Size = new System.Drawing.Size(157, 164);
             this.groupBoxSize.TabIndex = 4;
             this.groupBoxSize.TabStop = false;
             this.groupBoxSize.Text = "Size";
@@ -107,7 +107,7 @@ namespace PizzaOrderingApplication
             this.flowLayoutPanelSize.Location = new System.Drawing.Point(6, 41);
             this.flowLayoutPanelSize.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanelSize.Name = "flowLayoutPanelSize";
-            this.flowLayoutPanelSize.Size = new System.Drawing.Size(141, 117);
+            this.flowLayoutPanelSize.Size = new System.Drawing.Size(145, 117);
             this.flowLayoutPanelSize.TabIndex = 9;
             this.flowLayoutPanelSize.WrapContents = false;
             // 
@@ -126,7 +126,7 @@ namespace PizzaOrderingApplication
             this.groupBoxIngredients.Controls.Add(this.flowLayoutPanelIngredients);
             this.groupBoxIngredients.Controls.Add(this.labelIngredients);
             this.groupBoxIngredients.Enabled = false;
-            this.groupBoxIngredients.Location = new System.Drawing.Point(238, 143);
+            this.groupBoxIngredients.Location = new System.Drawing.Point(244, 143);
             this.groupBoxIngredients.Name = "groupBoxIngredients";
             this.groupBoxIngredients.Size = new System.Drawing.Size(322, 267);
             this.groupBoxIngredients.TabIndex = 5;
@@ -163,7 +163,7 @@ namespace PizzaOrderingApplication
             this.groupBoxDelivery.Controls.Add(this.maskedTextBoxDelivery);
             this.groupBoxDelivery.Controls.Add(this.labelDelivery);
             this.groupBoxDelivery.Enabled = false;
-            this.groupBoxDelivery.Location = new System.Drawing.Point(587, 143);
+            this.groupBoxDelivery.Location = new System.Drawing.Point(590, 143);
             this.groupBoxDelivery.Name = "groupBoxDelivery";
             this.groupBoxDelivery.Size = new System.Drawing.Size(147, 80);
             this.groupBoxDelivery.TabIndex = 6;
@@ -271,12 +271,12 @@ namespace PizzaOrderingApplication
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 513);
+            this.Controls.Add(this.groupBoxSize);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.buttonOrder);
             this.Controls.Add(this.groupBoxPrice);
             this.Controls.Add(this.groupBoxDelivery);
             this.Controls.Add(this.groupBoxIngredients);
-            this.Controls.Add(this.groupBoxSize);
             this.Controls.Add(this.labelSubtitle);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.labelTitle);
