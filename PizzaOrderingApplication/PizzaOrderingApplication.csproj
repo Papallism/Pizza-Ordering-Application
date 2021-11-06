@@ -4,6 +4,10 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <Product>UNIC Pizza</Product>
+    <Description>UNIC Pizza Ordering Application</Description>
+    <Company>UNIC Pizza Ltd</Company>
+    <Copyright>Copyright ©2021</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

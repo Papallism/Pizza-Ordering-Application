@@ -121,4 +121,10 @@
   <data name="Pizza Banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pizza Banner.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pizza image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pizza image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pizza Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pizza Image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

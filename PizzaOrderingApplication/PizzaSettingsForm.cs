@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 
@@ -13,41 +14,30 @@ namespace PizzaOrderingApplication
         public PizzaSettingsForm()
         {
             InitializeComponent();
+
+            sizes.Add(new PizzaSize("Small", 5.5, 2));
+            sizes.Add(new PizzaSize("Medium", 7.5, 3));
+            sizes.Add(new PizzaSize("Large", 9.99, 4));
+
+            toppings.Add(new PizzaTopping("Ham", 0.5));
+            toppings.Add(new PizzaTopping("Bacon", 0.6));
+            toppings.Add(new PizzaTopping("Pepperoni", 0.65));
+            toppings.Add(new PizzaTopping("Salami", 0.5));
         }
 
         private void PizzaSettingsForm_Load(object sender, System.EventArgs e)
         {
+            dataGridViewSizeSettings.DataSource = new BindingList<PizzaSize>(sizes);
+
+            dataGridViewToppingsSettings.DataSource = new BindingList<PizzaTopping>(toppings);
         }
 
         public void GetSizeData()
         {
-            foreach (DataGridViewRow row in dataGridViewSizeSettings.Rows)
-            {
-                if (row.Index == dataGridViewSizeSettings.Rows.Count - 1)
-                {
-                    break;
-                }
-                var sizeName = row.Cells["sizeName"].Value.ToString();
-                var sizePrice = double.Parse(row.Cells["sizePrice"].Value.ToString());
-                var sizeFreeIngredients = int.Parse(row.Cells["sizeFreeIngredients"].Value.ToString());
-
-                sizes.Add(new PizzaSize(sizeName, sizePrice, sizeFreeIngredients));
-            }
         }
 
         public void GetToppingData()
         {
-            foreach (DataGridViewRow row in dataGridViewToppingsSettings.Rows)
-            {
-                if (row.Index == dataGridViewToppingsSettings.Rows.Count - 1)
-                {
-                    break;
-                }
-                var sizeName = row.Cells["toppingName"].Value.ToString();
-                var sizePrice = double.Parse(row.Cells["toppingPrice"].Value.ToString());
-
-                toppings.Add(new PizzaTopping(sizeName, sizePrice));
-            }
         }
 
         private void buttonSaveSizes_Click(object sender, System.EventArgs e)
@@ -55,24 +45,22 @@ namespace PizzaOrderingApplication
             GetSizeData();
 
             var allSizesJson = JsonConvert.SerializeObject(sizes);
-            File.WriteAllText("sizes.json", allSizesJson);
+            File.WriteAllText("PizzaSizes.json", allSizesJson);
 
             MessageBox.Show("Successfully saved pizza sizes.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void buttonSaveToppings_Click(object sender, System.EventArgs e)
         {
-            GetToppingData();
-
             var allToppingsJson = JsonConvert.SerializeObject(toppings);
-            File.WriteAllText("toppings.json", allToppingsJson);
+            File.WriteAllText("PizzaToppings.json", allToppingsJson);
 
             MessageBox.Show("Successfully saved pizza toppings.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void PizzaSettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MessageBox.Show("Test");
+            MessageBox.Show("Close Settings Form?");
         }
     }
 }

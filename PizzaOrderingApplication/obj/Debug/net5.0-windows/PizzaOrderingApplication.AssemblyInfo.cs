@@ -11,11 +11,13 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("PizzaOrderingApplication")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("UNIC Pizza Ltd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright ©2021")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("UNIC Pizza Ordering Application")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("PizzaOrderingApplication")]
+[assembly: System.Reflection.AssemblyProductAttribute("UNIC Pizza")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PizzaOrderingApplication")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]

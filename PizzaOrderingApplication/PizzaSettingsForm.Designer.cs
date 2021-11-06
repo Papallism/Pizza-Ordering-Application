@@ -32,15 +32,10 @@ namespace PizzaOrderingApplication
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PizzaSettingsForm));
             this.groupBoxSizeSettings = new System.Windows.Forms.GroupBox();
             this.dataGridViewSizeSettings = new System.Windows.Forms.DataGridView();
-            this.sizeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sizePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sizeFreeIngredients = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonResetSizes = new System.Windows.Forms.Button();
             this.buttonSaveSizes = new System.Windows.Forms.Button();
             this.groupBoxToppingsSettings = new System.Windows.Forms.GroupBox();
             this.dataGridViewToppingsSettings = new System.Windows.Forms.DataGridView();
-            this.toppingName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toppingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonResetToppings = new System.Windows.Forms.Button();
             this.buttonSaveToppings = new System.Windows.Forms.Button();
             this.groupBoxSizeSettings.SuspendLayout();
@@ -66,33 +61,11 @@ namespace PizzaOrderingApplication
             this.dataGridViewSizeSettings.AllowDrop = true;
             this.dataGridViewSizeSettings.AllowUserToOrderColumns = true;
             this.dataGridViewSizeSettings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSizeSettings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sizeName,
-            this.sizePrice,
-            this.sizeFreeIngredients});
             this.dataGridViewSizeSettings.Location = new System.Drawing.Point(6, 22);
             this.dataGridViewSizeSettings.Name = "dataGridViewSizeSettings";
             this.dataGridViewSizeSettings.RowTemplate.Height = 25;
             this.dataGridViewSizeSettings.Size = new System.Drawing.Size(366, 362);
             this.dataGridViewSizeSettings.TabIndex = 2;
-            // 
-            // sizeName
-            // 
-            this.sizeName.Frozen = true;
-            this.sizeName.HeaderText = "Name";
-            this.sizeName.Name = "sizeName";
-            // 
-            // sizePrice
-            // 
-            this.sizePrice.Frozen = true;
-            this.sizePrice.HeaderText = "Price";
-            this.sizePrice.Name = "sizePrice";
-            // 
-            // sizeFreeIngredients
-            // 
-            this.sizeFreeIngredients.Frozen = true;
-            this.sizeFreeIngredients.HeaderText = "Free Ingredients";
-            this.sizeFreeIngredients.Name = "sizeFreeIngredients";
             // 
             // buttonResetSizes
             // 
@@ -132,26 +105,11 @@ namespace PizzaOrderingApplication
             this.dataGridViewToppingsSettings.AllowDrop = true;
             this.dataGridViewToppingsSettings.AllowUserToOrderColumns = true;
             this.dataGridViewToppingsSettings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewToppingsSettings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.toppingName,
-            this.toppingPrice});
             this.dataGridViewToppingsSettings.Location = new System.Drawing.Point(6, 22);
             this.dataGridViewToppingsSettings.Name = "dataGridViewToppingsSettings";
             this.dataGridViewToppingsSettings.RowTemplate.Height = 25;
             this.dataGridViewToppingsSettings.Size = new System.Drawing.Size(366, 362);
             this.dataGridViewToppingsSettings.TabIndex = 2;
-            // 
-            // toppingName
-            // 
-            this.toppingName.Frozen = true;
-            this.toppingName.HeaderText = "Name";
-            this.toppingName.Name = "toppingName";
-            // 
-            // toppingPrice
-            // 
-            this.toppingPrice.Frozen = true;
-            this.toppingPrice.HeaderText = "Price";
-            this.toppingPrice.Name = "toppingPrice";
             // 
             // buttonResetToppings
             // 
@@ -204,10 +162,5 @@ namespace PizzaOrderingApplication
         private System.Windows.Forms.DataGridView dataGridViewToppingsSettings;
         private System.Windows.Forms.Button buttonResetToppings;
         private System.Windows.Forms.Button buttonSaveToppings;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sizeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sizePrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sizeFreeIngredients;
-        private System.Windows.Forms.DataGridViewTextBoxColumn toppingName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn toppingPrice;
     }
 }

@@ -31,7 +31,6 @@ namespace PizzaOrderingApplication
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.labelTitle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelSubtitle = new System.Windows.Forms.Label();
             this.groupBoxSize = new System.Windows.Forms.GroupBox();
@@ -49,33 +48,28 @@ namespace PizzaOrderingApplication
             this.labelPrice = new System.Windows.Forms.Label();
             this.buttonOrder = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBoxSize.SuspendLayout();
             this.groupBoxIngredients.SuspendLayout();
             this.groupBoxDelivery.SuspendLayout();
             this.groupBoxPrice.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelTitle.Location = new System.Drawing.Point(231, 9);
+            this.labelTitle.Location = new System.Drawing.Point(231, 24);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(338, 40);
             this.labelTitle.TabIndex = 0;
-            this.labelTitle.Text = "Welcome to UNIC pizza";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PizzaOrderingApplication.Properties.Resources.Pizza_Banner;
-            this.pictureBox1.Location = new System.Drawing.Point(-145, -8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(356, 113);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.labelTitle.Text = "Welcome to UNIC Pizza";
             // 
             // pictureBox2
             // 
@@ -91,7 +85,7 @@ namespace PizzaOrderingApplication
             // 
             this.labelSubtitle.AutoSize = true;
             this.labelSubtitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelSubtitle.Location = new System.Drawing.Point(259, 53);
+            this.labelSubtitle.Location = new System.Drawing.Point(259, 68);
             this.labelSubtitle.Name = "labelSubtitle";
             this.labelSubtitle.Size = new System.Drawing.Size(281, 30);
             this.labelSubtitle.TabIndex = 3;
@@ -249,11 +243,46 @@ namespace PizzaOrderingApplication
             this.buttonSettings.UseVisualStyleBackColor = true;
             this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PizzaOrderingApplication.Properties.Resources.Pizza_Banner;
+            this.pictureBox1.Location = new System.Drawing.Point(-145, -8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(356, 113);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 513);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.buttonSettings);
             this.Controls.Add(this.buttonOrder);
             this.Controls.Add(this.groupBoxPrice);
@@ -269,7 +298,6 @@ namespace PizzaOrderingApplication
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Window";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBoxSize.ResumeLayout(false);
             this.groupBoxSize.PerformLayout();
@@ -279,6 +307,9 @@ namespace PizzaOrderingApplication
             this.groupBoxDelivery.PerformLayout();
             this.groupBoxPrice.ResumeLayout(false);
             this.groupBoxPrice.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,7 +318,6 @@ namespace PizzaOrderingApplication
         #endregion
 
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label labelSubtitle;
         private System.Windows.Forms.GroupBox groupBoxSize;
@@ -305,6 +335,10 @@ namespace PizzaOrderingApplication
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelIngredients;
         private System.Windows.Forms.Label labelFree;
         private System.Windows.Forms.Button buttonSettings;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

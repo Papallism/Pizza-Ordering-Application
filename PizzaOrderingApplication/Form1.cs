@@ -62,6 +62,12 @@ namespace PizzaOrderingApplication
             InitializeComponent();
         }
 
+        // Function to create, name and show controls (radio buttons and check boxes)
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: Load sizes and toppings from JSON
+        }
+
         // Function to enable GroupBoxes and Button
         private void Enable_Elements()
         {
@@ -85,26 +91,6 @@ namespace PizzaOrderingApplication
 
             totalPrice = basePrice + extraPrice;
             textBoxPrice.Text = $"{totalPrice.ToString("C", CultureInfo.CreateSpecificCulture("en-DE"))}";
-        }
-
-        // Function to create, name and show controls (radio buttons and check boxes)
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            foreach (var size in settingsForm.sizes)
-            {
-                var radioButton = new RadioButton();
-                radioButton.Text = size.Name;
-                radioButton.CheckedChanged += RadioButton_CheckedChanged;
-                flowLayoutPanelSize.Controls.Add(radioButton);
-            }
-
-            foreach (var topping in settingsForm.toppings)
-            {
-                var checkBox = new CheckBox();
-                checkBox.Text = topping.Name;
-                checkBox.CheckedChanged += CheckBox_CheckedChanged;
-                flowLayoutPanelIngredients.Controls.Add(checkBox);
-            }
         }
 
         // Enable the rest of the GroupBoxes and the Button, and update the free ingredient label
@@ -218,6 +204,15 @@ namespace PizzaOrderingApplication
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             settingsForm.ShowDialog();
+
+            DisplaySizes();
+            DisplayToppings();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutWindow aboutWindow = new AboutWindow();
+            aboutWindow.ShowDialog();
         }
     }
 }
