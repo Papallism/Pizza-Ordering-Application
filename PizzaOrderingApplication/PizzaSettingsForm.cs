@@ -8,8 +8,11 @@ namespace PizzaOrderingApplication
 {
     public partial class PizzaSettingsForm : Form
     {
-        public List<PizzaSize> sizes = new List<PizzaSize>();
-        public List<PizzaTopping> toppings = new List<PizzaTopping>();
+        private List<PizzaSize> sizes = new List<PizzaSize>();
+        private List<PizzaTopping> toppings = new List<PizzaTopping>();
+
+        public List<PizzaSize> GetPizzaSizes { get { return sizes; } }
+        public List<PizzaTopping> GetPizzaToppings { get { return toppings; } }
 
         public PizzaSettingsForm()
         {

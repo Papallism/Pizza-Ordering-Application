@@ -139,7 +139,7 @@ namespace PizzaOrderingApplication
         {
             flowLayoutPanelSize.Controls.Clear();
 
-            foreach (var size in settingsForm.sizes)
+            foreach (var size in settingsForm.GetPizzaSizes)
             {
                 var radioButton = new RadioButton();
                 radioButton.Text = size.Name;
@@ -152,7 +152,7 @@ namespace PizzaOrderingApplication
         {
             flowLayoutPanelIngredients.Controls.Clear();
 
-            foreach (var topping in settingsForm.toppings)
+            foreach (var topping in settingsForm.GetPizzaToppings)
             {
                 var checkBox = new CheckBox();
                 checkBox.Text = topping.Name;
