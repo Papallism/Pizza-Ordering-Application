@@ -92,5 +92,15 @@ namespace PizzaOrderingApplication
                 return null;
             }
         }
+
+        private void buttonResetSizes_Click(object sender, System.EventArgs e)
+        {
+            // TODO: Revet size changes
+        }
+
+        private void buttonResetToppings_Click(object sender, System.EventArgs e)
+        {
+            // TODO: Revet topping changes
+        }
     }
 }

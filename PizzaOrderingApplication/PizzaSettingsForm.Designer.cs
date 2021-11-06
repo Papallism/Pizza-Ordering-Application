@@ -76,6 +76,7 @@ namespace PizzaOrderingApplication
             this.buttonResetSizes.TabIndex = 1;
             this.buttonResetSizes.Text = "Reset";
             this.buttonResetSizes.UseVisualStyleBackColor = true;
+            this.buttonResetSizes.Click += new System.EventHandler(this.buttonResetSizes_Click);
             // 
             // buttonSaveSizes
             // 
@@ -120,6 +121,7 @@ namespace PizzaOrderingApplication
             this.buttonResetToppings.TabIndex = 1;
             this.buttonResetToppings.Text = "Reset";
             this.buttonResetToppings.UseVisualStyleBackColor = true;
+            this.buttonResetToppings.Click += new System.EventHandler(this.buttonResetToppings_Click);
             // 
             // buttonSaveToppings
             // 
