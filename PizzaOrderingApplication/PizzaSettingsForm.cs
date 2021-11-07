@@ -87,20 +87,25 @@ namespace PizzaOrderingApplication
             }
         }
 
-        private void PizzaSettingsForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // TODO: Warning, check for unsaved data
-            MessageBox.Show("Close Settings Form?");
-        }
-
         private void buttonResetSizes_Click(object sender, System.EventArgs e)
         {
-            // TODO: Revet size changes
+            GetSizeData();
+            dataGridViewSizeSettings.DataSource = new BindingList<PizzaSize>(sizes);
         }
 
         private void buttonResetToppings_Click(object sender, System.EventArgs e)
         {
-            // TODO: Revet topping changes
+            GetToppingData();
+            dataGridViewToppingsSettings.DataSource = new BindingList<PizzaTopping>(toppings);
+        }
+
+        private void PizzaSettingsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GetSizeData();
+            GetToppingData();
+
+            dataGridViewSizeSettings.DataSource = new BindingList<PizzaSize>(sizes);
+            dataGridViewToppingsSettings.DataSource = new BindingList<PizzaTopping>(toppings);
         }
     }
 }

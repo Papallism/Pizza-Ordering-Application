@@ -73,10 +73,11 @@ namespace PizzaOrderingApplication
             Display_Price();
         }
 
-        // Calculate selected ingredients and price accordingly
+        // Calculate selected ingredients and price according to a topping being checked or unchecked
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             var checkBox = (sender as CheckBox);
+
             if (checkBox.Checked)
             {
                 ingredientCount++;
@@ -85,6 +86,7 @@ namespace PizzaOrderingApplication
             {
                 ingredientCount--;
             }
+
             Display_Price();
         }
 
