@@ -1,7 +1,7 @@
 ﻿
 namespace PizzaOrderingApplication
 {
-    partial class Form1
+    partial class MainWindowForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace PizzaOrderingApplication
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindowForm));
             this.labelTitle = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelSubtitle = new System.Windows.Forms.Label();
@@ -96,7 +96,7 @@ namespace PizzaOrderingApplication
             this.groupBoxSize.Controls.Add(this.labelSize);
             this.groupBoxSize.Location = new System.Drawing.Point(63, 143);
             this.groupBoxSize.Name = "groupBoxSize";
-            this.groupBoxSize.Size = new System.Drawing.Size(157, 164);
+            this.groupBoxSize.Size = new System.Drawing.Size(157, 267);
             this.groupBoxSize.TabIndex = 4;
             this.groupBoxSize.TabStop = false;
             this.groupBoxSize.Text = "Size";
@@ -107,7 +107,7 @@ namespace PizzaOrderingApplication
             this.flowLayoutPanelSize.Location = new System.Drawing.Point(6, 41);
             this.flowLayoutPanelSize.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanelSize.Name = "flowLayoutPanelSize";
-            this.flowLayoutPanelSize.Size = new System.Drawing.Size(145, 117);
+            this.flowLayoutPanelSize.Size = new System.Drawing.Size(145, 222);
             this.flowLayoutPanelSize.TabIndex = 9;
             this.flowLayoutPanelSize.WrapContents = false;
             // 
@@ -126,7 +126,7 @@ namespace PizzaOrderingApplication
             this.groupBoxIngredients.Controls.Add(this.flowLayoutPanelIngredients);
             this.groupBoxIngredients.Controls.Add(this.labelIngredients);
             this.groupBoxIngredients.Enabled = false;
-            this.groupBoxIngredients.Location = new System.Drawing.Point(244, 143);
+            this.groupBoxIngredients.Location = new System.Drawing.Point(242, 143);
             this.groupBoxIngredients.Name = "groupBoxIngredients";
             this.groupBoxIngredients.Size = new System.Drawing.Size(322, 267);
             this.groupBoxIngredients.TabIndex = 5;
@@ -194,7 +194,7 @@ namespace PizzaOrderingApplication
             this.groupBoxPrice.Controls.Add(this.textBoxPrice);
             this.groupBoxPrice.Controls.Add(this.labelPrice);
             this.groupBoxPrice.Enabled = false;
-            this.groupBoxPrice.Location = new System.Drawing.Point(587, 227);
+            this.groupBoxPrice.Location = new System.Drawing.Point(590, 227);
             this.groupBoxPrice.Name = "groupBoxPrice";
             this.groupBoxPrice.Size = new System.Drawing.Size(147, 80);
             this.groupBoxPrice.TabIndex = 7;
@@ -266,7 +266,7 @@ namespace PizzaOrderingApplication
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // Form1
+            // MainWindowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -282,7 +282,7 @@ namespace PizzaOrderingApplication
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "MainWindowForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Window";
             this.Load += new System.EventHandler(this.Form1_Load);

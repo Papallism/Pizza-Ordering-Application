@@ -6,7 +6,6 @@ C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\bi
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\bin\Debug\net5.0-windows\ref\PizzaOrderingApplication.dll
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\bin\Debug\net5.0-windows\PizzaOrderingApplication.pdb
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.csproj.AssemblyReference.cache
-C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.Form1.resources
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.Properties.Resources.resources
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.csproj.GenerateResource.cache
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.GeneratedMSBuildEditorConfig.editorconfig
@@ -39,3 +38,4 @@ C:\Users\mihal\Desktop\Pizza-Ordering-Application\PizzaOrderingApplication\obj\D
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.PizzaSettingsForm.resources
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.AboutWindow.resources
+C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.MainWindowForm.resources

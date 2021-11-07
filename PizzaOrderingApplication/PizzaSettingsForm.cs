@@ -61,12 +61,6 @@ namespace PizzaOrderingApplication
             MessageBox.Show("Successfully saved pizza toppings.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void PizzaSettingsForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // TODO: Warning, check for unsaved data
-            MessageBox.Show("Close Settings Form?");
-        }
-
         // Read the JSON file to get size data
         private string ReadSizesFromJson()
         {
@@ -91,6 +85,12 @@ namespace PizzaOrderingApplication
             {
                 return null;
             }
+        }
+
+        private void PizzaSettingsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // TODO: Warning, check for unsaved data
+            MessageBox.Show("Close Settings Form?");
         }
 
         private void buttonResetSizes_Click(object sender, System.EventArgs e)

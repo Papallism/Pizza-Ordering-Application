@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace PizzaOrderingApplication
 {
-    public partial class Form1 : Form
+    public partial class MainWindowForm : Form
     {
         private PizzaSettingsForm settingsForm = new PizzaSettingsForm();
 
@@ -18,7 +18,7 @@ namespace PizzaOrderingApplication
         private int ingredientCount = 0;
         private int freeIngredients = 0;
 
-        public Form1()
+        public MainWindowForm()
         {
             InitializeComponent();
         }
@@ -62,6 +62,7 @@ namespace PizzaOrderingApplication
 
             var radioButton = (sender as RadioButton);
 
+            // TODO: name clashes with addition of price on radio button text
             PizzaSize selectedSize = settingsForm.GetPizzaSizes.Where(x => x.Name.Equals(radioButton.Text))
                                                                .FirstOrDefault();
 
@@ -97,7 +98,7 @@ namespace PizzaOrderingApplication
             foreach (var size in settingsForm.GetPizzaSizes)
             {
                 var radioButton = new RadioButton();
-                radioButton.Text = $"{size.Name} ({size.Price.ToString("C", CultureInfo.CreateSpecificCulture("en-DE"))})";
+                radioButton.Text = $"{size.Name}"; //({size.Price.ToString("C", CultureInfo.CreateSpecificCulture("en-DE"))})";
                 radioButton.Width = (TextRenderer.MeasureText(radioButton.Text, radioButton.Font)).Width + 20;
                 radioButton.CheckedChanged += RadioButton_CheckedChanged;
                 flowLayoutPanelSize.Controls.Add(radioButton);
