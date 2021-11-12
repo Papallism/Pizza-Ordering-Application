@@ -17,9 +17,11 @@ namespace PizzaOrderingApplication
         {
             InitializeComponent();
 
+            // Load any saved user data in the list
             GetUserData();
         }
 
+        // If saved users exist, deserialize them into the list
         private void GetUserData()
         {
             string userData = ReadUsersFromJson();
@@ -29,6 +31,7 @@ namespace PizzaOrderingApplication
             }
         }
 
+        // Read the JSON file for any saved users or return null
         private string ReadUsersFromJson()
         {
             if (File.Exists("PizzaUsers.json"))
@@ -43,7 +46,7 @@ namespace PizzaOrderingApplication
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            // Check if there are no existing users
+            // Check if there are no existing users and if not, use default credentials only
             if (users.Count == 0)
             {
                 if (textBoxUsername.Text == DEFAULT_USERNAME && textBoxPassword.Text == DEFAULT_PASSWORD)
@@ -60,6 +63,7 @@ namespace PizzaOrderingApplication
                     MessageBox.Show("Invalid credentials");
                 }
             }
+            // TODO: Check existing users
             else
             {
                 if (textBoxUsername.Text == "Michalis" && textBoxPassword.Text == "1234")

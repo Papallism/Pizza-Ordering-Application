@@ -10,9 +10,11 @@ namespace PizzaOrderingApplication
     {
         private List<PizzaSize> sizes = new List<PizzaSize>();
         private List<PizzaTopping> toppings = new List<PizzaTopping>();
+        private List<User> users = new List<User>();
 
         public List<PizzaSize> GetPizzaSizes
         { get { return sizes; } }
+
         public List<PizzaTopping> GetPizzaToppings
         { get { return toppings; } }
 
@@ -23,10 +25,12 @@ namespace PizzaOrderingApplication
             // Check for already existing size and topping data, load saved data
             GetSizeData();
             GetToppingData();
+            GetUserData();
 
             // Bind the sizes and toppings lists to their Data Grids
             dataGridViewSizeSettings.DataSource = new BindingList<PizzaSize>(sizes);
             dataGridViewToppingsSettings.DataSource = new BindingList<PizzaTopping>(toppings);
+            dataGridViewUserSettings.DataSource = new BindingList<User>(users);
         }
 
         // Get data from the JSON file and if it's not empty, get the size objects
@@ -45,22 +49,14 @@ namespace PizzaOrderingApplication
                 toppings = JsonConvert.DeserializeObject<List<PizzaTopping>>(toppingsFromJson);
         }
 
-        // Save sizes to JSON file
-        private void buttonSaveSizes_Click(object sender, System.EventArgs e)
+        // If saved users exist, deserialize them into the list
+        private void GetUserData()
         {
-            var allSizesJson = JsonConvert.SerializeObject(sizes);
-            File.WriteAllText("PizzaSizes.json", allSizesJson);
-
-            MessageBox.Show("Successfully saved pizza sizes.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        // Save toppings to JSON file
-        private void buttonSaveToppings_Click(object sender, System.EventArgs e)
-        {
-            var allToppingsJson = JsonConvert.SerializeObject(toppings);
-            File.WriteAllText("PizzaToppings.json", allToppingsJson);
-
-            MessageBox.Show("Successfully saved pizza toppings.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string userData = ReadUsersFromJson();
+            if (userData != null)
+            {
+                users = JsonConvert.DeserializeObject<List<User>>(userData);
+            }
         }
 
         // Read the JSON file to get size data
@@ -84,6 +80,18 @@ namespace PizzaOrderingApplication
                 return File.ReadAllText("PizzaToppings.json");
             }
             catch (FileNotFoundException)
+            {
+                return null;
+            }
+        }// Read the JSON file for any saved users or return null
+
+        private string ReadUsersFromJson()
+        {
+            if (File.Exists("PizzaUsers.json"))
+            {
+                return File.ReadAllText("PizzaUsers.json");
+            }
+            else
             {
                 return null;
             }
@@ -111,6 +119,40 @@ namespace PizzaOrderingApplication
 
             dataGridViewSizeSettings.DataSource = new BindingList<PizzaSize>(sizes);
             dataGridViewToppingsSettings.DataSource = new BindingList<PizzaTopping>(toppings);
+        }
+
+        // Save sizes to JSON file
+        private void buttonSaveSizes_Click(object sender, System.EventArgs e)
+        {
+            var allSizesJson = JsonConvert.SerializeObject(sizes);
+            File.WriteAllText("PizzaSizes.json", allSizesJson);
+
+            MessageBox.Show("Successfully saved pizza sizes.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // Save toppings to JSON file
+        private void buttonSaveToppings_Click(object sender, System.EventArgs e)
+        {
+            var allToppingsJson = JsonConvert.SerializeObject(toppings);
+            File.WriteAllText("PizzaToppings.json", allToppingsJson);
+
+            MessageBox.Show("Successfully saved pizza toppings.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // Save users to JSON file
+        private void buttonSaveUser_Click(object sender, System.EventArgs e)
+        {
+            var allUsersJson = JsonConvert.SerializeObject(users);
+            File.WriteAllText("PizzaUsers.json", allUsersJson);
+
+            MessageBox.Show("Successfully saved users.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // When Reset is clicked, load the previously saved data from the JSON file and rebind the list
+        private void buttonResetUser_Click(object sender, System.EventArgs e)
+        {
+            GetUserData();
+            dataGridViewUserSettings.DataSource = new BindingList<User>(users);
         }
     }
 }
