@@ -101,7 +101,7 @@ namespace PizzaOrderingApplication
             {
                 var radioButton = new RadioButton();
                 radioButton.Text = $"{size.Name}"; //({size.Price.ToString("C", CultureInfo.CreateSpecificCulture("en-DE"))})";
-                radioButton.Width = (TextRenderer.MeasureText(radioButton.Text, radioButton.Font)).Width + 20;
+                //radioButton.Width = (TextRenderer.MeasureText(radioButton.Text, radioButton.Font)).Width + 20;
                 radioButton.CheckedChanged += RadioButton_CheckedChanged;
                 flowLayoutPanelSize.Controls.Add(radioButton);
             }
@@ -172,7 +172,16 @@ namespace PizzaOrderingApplication
         // Function for when the Settings menu item is clicked
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var currentCheckedRadioButton = flowLayoutPanelSize.Controls.OfType<RadioButton>()
+                                                                        .FirstOrDefault(x => x.Checked == true);
+
             settingsForm.ShowDialog();
+
+            if (currentCheckedRadioButton != null)
+            {
+                currentCheckedRadioButton.Checked = false;
+                currentCheckedRadioButton.Checked = true;
+            }
 
             // Update sizes and toppings when settings form is closed
             DisplaySizes();

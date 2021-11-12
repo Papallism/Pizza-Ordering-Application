@@ -87,18 +87,21 @@ namespace PizzaOrderingApplication
             }
         }
 
+        // When Reset is clicked, load the previously saved data from the JSON file and rebind the list
         private void buttonResetSizes_Click(object sender, System.EventArgs e)
         {
             GetSizeData();
             dataGridViewSizeSettings.DataSource = new BindingList<PizzaSize>(sizes);
         }
 
+        // When Reset is clicked, load the previously saved data from the JSON file and rebind the list
         private void buttonResetToppings_Click(object sender, System.EventArgs e)
         {
             GetToppingData();
             dataGridViewToppingsSettings.DataSource = new BindingList<PizzaTopping>(toppings);
         }
 
+        // On form closing, load the saved data from JSON files and rebind the lists to handle unwanted changes
         private void PizzaSettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             GetSizeData();
