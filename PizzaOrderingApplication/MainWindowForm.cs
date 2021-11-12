@@ -177,6 +177,7 @@ namespace PizzaOrderingApplication
 
             settingsForm.ShowDialog();
 
+            // TODO: Radio button after settings form is closed
             if (currentCheckedRadioButton != null)
             {
                 currentCheckedRadioButton.Checked = false;

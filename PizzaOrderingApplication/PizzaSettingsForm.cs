@@ -52,10 +52,10 @@ namespace PizzaOrderingApplication
         // If saved users exist, deserialize them into the list
         private void GetUserData()
         {
-            string userData = ReadUsersFromJson();
-            if (userData != null)
+            string userDataFromJson = ReadUsersFromJson();
+            if (userDataFromJson != null)
             {
-                users = JsonConvert.DeserializeObject<List<User>>(userData);
+                users = JsonConvert.DeserializeObject<List<User>>(userDataFromJson);
             }
         }
 
@@ -87,11 +87,11 @@ namespace PizzaOrderingApplication
 
         private string ReadUsersFromJson()
         {
-            if (File.Exists("PizzaUsers.json"))
+            try
             {
                 return File.ReadAllText("PizzaUsers.json");
             }
-            else
+            catch (FileNotFoundException)
             {
                 return null;
             }
@@ -111,14 +111,23 @@ namespace PizzaOrderingApplication
             dataGridViewToppingsSettings.DataSource = new BindingList<PizzaTopping>(toppings);
         }
 
+        // When Reset is clicked, load the previously saved data from the JSON file and rebind the list
+        private void buttonResetUser_Click(object sender, System.EventArgs e)
+        {
+            GetUserData();
+            dataGridViewUserSettings.DataSource = new BindingList<User>(users);
+        }
+
         // On form closing, load the saved data from JSON files and rebind the lists to handle unwanted changes
         private void PizzaSettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             GetSizeData();
             GetToppingData();
+            GetUserData();
 
             dataGridViewSizeSettings.DataSource = new BindingList<PizzaSize>(sizes);
             dataGridViewToppingsSettings.DataSource = new BindingList<PizzaTopping>(toppings);
+            dataGridViewUserSettings.DataSource = new BindingList<User>(users);
         }
 
         // Save sizes to JSON file
@@ -146,13 +155,6 @@ namespace PizzaOrderingApplication
             File.WriteAllText("PizzaUsers.json", allUsersJson);
 
             MessageBox.Show("Successfully saved users.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        // When Reset is clicked, load the previously saved data from the JSON file and rebind the list
-        private void buttonResetUser_Click(object sender, System.EventArgs e)
-        {
-            GetUserData();
-            dataGridViewUserSettings.DataSource = new BindingList<User>(users);
         }
     }
 }

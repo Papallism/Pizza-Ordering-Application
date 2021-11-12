@@ -64,7 +64,7 @@ namespace PizzaOrderingApplication
                     MessageBox.Show("Invalid credentials");
                 }
             }
-            // TODO: Check existing users
+            // Check if match with an existing user
             else
             {
                 var matchingUser = users.Where(x => x.Username == textBoxUsername.Text)
