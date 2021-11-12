@@ -76,6 +76,7 @@ namespace PizzaOrderingApplication
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(172, 142);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(180, 23);
             this.textBoxPassword.TabIndex = 4;
             // 
@@ -87,6 +88,7 @@ namespace PizzaOrderingApplication
             this.buttonLogin.TabIndex = 5;
             this.buttonLogin.Text = "&Login";
             this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // LoginForm
             // 
@@ -100,6 +102,7 @@ namespace PizzaOrderingApplication
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.labelLoginTitle);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             this.ResumeLayout(false);
             this.PerformLayout();

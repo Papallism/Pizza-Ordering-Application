@@ -11,8 +11,10 @@ namespace PizzaOrderingApplication
         private List<PizzaSize> sizes = new List<PizzaSize>();
         private List<PizzaTopping> toppings = new List<PizzaTopping>();
 
-        public List<PizzaSize> GetPizzaSizes { get { return sizes; } }
-        public List<PizzaTopping> GetPizzaToppings { get { return toppings; } }
+        public List<PizzaSize> GetPizzaSizes
+        { get { return sizes; } }
+        public List<PizzaTopping> GetPizzaToppings
+        { get { return toppings; } }
 
         public PizzaSettingsForm()
         {

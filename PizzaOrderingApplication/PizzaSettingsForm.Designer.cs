@@ -38,10 +38,16 @@ namespace PizzaOrderingApplication
             this.dataGridViewToppingsSettings = new System.Windows.Forms.DataGridView();
             this.buttonResetToppings = new System.Windows.Forms.Button();
             this.buttonSaveToppings = new System.Windows.Forms.Button();
+            this.groupBoxUsers = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBoxSizeSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSizeSettings)).BeginInit();
             this.groupBoxToppingsSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewToppingsSettings)).BeginInit();
+            this.groupBoxUsers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxSizeSettings
@@ -94,7 +100,7 @@ namespace PizzaOrderingApplication
             this.groupBoxToppingsSettings.Controls.Add(this.dataGridViewToppingsSettings);
             this.groupBoxToppingsSettings.Controls.Add(this.buttonResetToppings);
             this.groupBoxToppingsSettings.Controls.Add(this.buttonSaveToppings);
-            this.groupBoxToppingsSettings.Location = new System.Drawing.Point(410, 12);
+            this.groupBoxToppingsSettings.Location = new System.Drawing.Point(403, 12);
             this.groupBoxToppingsSettings.Name = "groupBoxToppingsSettings";
             this.groupBoxToppingsSettings.Size = new System.Drawing.Size(378, 426);
             this.groupBoxToppingsSettings.TabIndex = 1;
@@ -134,11 +140,55 @@ namespace PizzaOrderingApplication
             this.buttonSaveToppings.UseVisualStyleBackColor = true;
             this.buttonSaveToppings.Click += new System.EventHandler(this.buttonSaveToppings_Click);
             // 
+            // groupBoxUsers
+            // 
+            this.groupBoxUsers.Controls.Add(this.dataGridView1);
+            this.groupBoxUsers.Controls.Add(this.button1);
+            this.groupBoxUsers.Controls.Add(this.button2);
+            this.groupBoxUsers.Location = new System.Drawing.Point(794, 12);
+            this.groupBoxUsers.Name = "groupBoxUsers";
+            this.groupBoxUsers.Size = new System.Drawing.Size(378, 426);
+            this.groupBoxUsers.TabIndex = 3;
+            this.groupBoxUsers.TabStop = false;
+            this.groupBoxUsers.Text = "Users";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowDrop = true;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 22);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(366, 362);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(218, 390);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 30);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(60, 390);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 30);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Save";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // PizzaSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1185, 450);
+            this.Controls.Add(this.groupBoxUsers);
             this.Controls.Add(this.groupBoxToppingsSettings);
             this.Controls.Add(this.groupBoxSizeSettings);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -149,6 +199,8 @@ namespace PizzaOrderingApplication
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSizeSettings)).EndInit();
             this.groupBoxToppingsSettings.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewToppingsSettings)).EndInit();
+            this.groupBoxUsers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -163,5 +215,9 @@ namespace PizzaOrderingApplication
         private System.Windows.Forms.DataGridView dataGridViewToppingsSettings;
         private System.Windows.Forms.Button buttonResetToppings;
         private System.Windows.Forms.Button buttonSaveToppings;
+        private System.Windows.Forms.GroupBox groupBoxUsers;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

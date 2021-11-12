@@ -195,5 +195,13 @@ namespace PizzaOrderingApplication
             aboutWindow.Text = "About Window";
             aboutWindow.ShowDialog();
         }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+            this.Close();
+        }
     }
 }

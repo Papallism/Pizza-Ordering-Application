@@ -39,3 +39,4 @@ C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\ob
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.AboutWindow.resources
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.MainWindowForm.resources
+C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.LoginForm.resources
