@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PizzaOrderingApplication
@@ -66,13 +67,27 @@ namespace PizzaOrderingApplication
             // TODO: Check existing users
             else
             {
-                if (textBoxUsername.Text == "Michalis" && textBoxPassword.Text == "1234")
+                var matchingUser = users.Where(x => x.Username == textBoxUsername.Text)
+                                        .FirstOrDefault();
+                if (matchingUser != null)
                 {
-                    MessageBox.Show("User login");
+                    if (matchingUser.Password == textBoxPassword.Text)
+                    {
+                        MessageBox.Show("Login!");
+
+                        this.Hide();
+                        MainWindowForm mainWindowForm = new MainWindowForm();
+                        mainWindowForm.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong password");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Wrong input");
+                    MessageBox.Show("No such user exists");
                 }
             }
         }
