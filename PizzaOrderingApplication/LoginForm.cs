@@ -14,6 +14,8 @@ namespace PizzaOrderingApplication
 
         private List<User> users = new List<User>();
 
+        private User loggedInUser = new User();
+
         public LoginForm()
         {
             InitializeComponent();
@@ -67,16 +69,17 @@ namespace PizzaOrderingApplication
             // Check if match with an existing user
             else
             {
-                var matchingUser = users.Where(x => x.Username == textBoxUsername.Text)
-                                        .FirstOrDefault();
-                if (matchingUser != null)
+                loggedInUser = users.FirstOrDefault(x => x.Username == textBoxUsername.Text);
+
+                if (loggedInUser != null)
                 {
-                    if (matchingUser.Password == textBoxPassword.Text)
+                    if (loggedInUser.Password == textBoxPassword.Text)
                     {
                         MessageBox.Show("Login!");
 
                         this.Hide();
-                        MainWindowForm mainWindowForm = new MainWindowForm();
+                        // Create a Main Window Form with the logged in user passed as an argument
+                        MainWindowForm mainWindowForm = new MainWindowForm(loggedInUser);
                         mainWindowForm.ShowDialog();
                         this.Close();
                     }

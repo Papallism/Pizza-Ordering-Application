@@ -23,6 +23,18 @@ namespace PizzaOrderingApplication
             InitializeComponent();
         }
 
+        public MainWindowForm(User loggedInUser)
+        {
+            InitializeComponent();
+
+            // TODO: Permissions
+            // Disable settings if user has none of the permissions
+            if (!loggedInUser.CanEditSizes && !loggedInUser.CanEditToppings && !loggedInUser.CanEditUsers)
+            {
+                settingsToolStripMenuItem.Enabled = false;
+            }
+        }
+
         // Check for any previously saved data to create and show controls for sizes and toppings
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -177,7 +189,7 @@ namespace PizzaOrderingApplication
 
             settingsForm.ShowDialog();
 
-            // TODO: Radio button after settings form is closed
+            // TODO: Radio button after settings form is closed does not remain checked
             if (currentCheckedRadioButton != null)
             {
                 currentCheckedRadioButton.Checked = false;

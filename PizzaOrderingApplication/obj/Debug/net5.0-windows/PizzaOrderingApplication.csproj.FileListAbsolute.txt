@@ -40,3 +40,4 @@ C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\bi
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.AboutWindow.resources
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.MainWindowForm.resources
 C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.LoginForm.resources
+C:\Users\mihal\source\repos\PizzaOrderingApplication\PizzaOrderingApplication\obj\Debug\net5.0-windows\PizzaOrderingApplication.SplashScreenForm.resources

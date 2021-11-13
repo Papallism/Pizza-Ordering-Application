@@ -13,5 +13,8 @@
     <Compile Update="PizzaSettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="SplashScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

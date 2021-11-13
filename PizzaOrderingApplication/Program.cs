@@ -14,6 +14,8 @@ namespace PizzaOrderingApplication
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            SplashScreenForm splashScreen = new SplashScreenForm();
+            splashScreen.ShowDialog();
             Application.Run(new LoginForm());
         }
     }
