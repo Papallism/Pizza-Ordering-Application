@@ -27,8 +27,37 @@ namespace PizzaOrderingApplication
         {
             InitializeComponent();
 
-            // TODO: Permissions
-            // Disable settings if user has none of the permissions
+            // Set permission for size settings
+            if (loggedInUser.CanEditSizes)
+            {
+                settingsForm.ShowSizeSettings = true;
+            }
+            else
+            {
+                settingsForm.ShowSizeSettings = false;
+            }
+
+            // Set permission for topping settings
+            if (loggedInUser.CanEditToppings)
+            {
+                settingsForm.ShowToppingSettings = true;
+            }
+            else
+            {
+                settingsForm.ShowToppingSettings = false;
+            }
+
+            // Set permission for user settings
+            if (loggedInUser.CanEditUsers)
+            {
+                settingsForm.ShowUserSettings = true;
+            }
+            else
+            {
+                settingsForm.ShowUserSettings = false;
+            }
+
+            // Disable all settings if user has none of the permissions
             if (!loggedInUser.CanEditSizes && !loggedInUser.CanEditToppings && !loggedInUser.CanEditUsers)
             {
                 settingsToolStripMenuItem.Enabled = false;

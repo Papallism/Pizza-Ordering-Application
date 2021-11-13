@@ -18,6 +18,10 @@ namespace PizzaOrderingApplication
         public List<PizzaTopping> GetPizzaToppings
         { get { return toppings; } }
 
+        public bool ShowSizeSettings { get; set; }
+        public bool ShowToppingSettings { get; set; }
+        public bool ShowUserSettings { get; set; }
+
         public PizzaSettingsForm()
         {
             InitializeComponent();
@@ -155,6 +159,37 @@ namespace PizzaOrderingApplication
             File.WriteAllText("PizzaUsers.json", allUsersJson);
 
             MessageBox.Show("Successfully saved users.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // Show only permitted settings depending on user permissions
+        private void PizzaSettingsForm_Load(object sender, System.EventArgs e)
+        {
+            if (ShowSizeSettings == true)
+            {
+                groupBoxSizeSettings.Visible = true;
+            }
+            else
+            {
+                groupBoxSizeSettings.Visible = false;
+            }
+
+            if (ShowToppingSettings == true)
+            {
+                groupBoxToppingsSettings.Visible = true;
+            }
+            else
+            {
+                groupBoxToppingsSettings.Visible = false;
+            }
+
+            if (ShowUserSettings == true)
+            {
+                groupBoxUserSettings.Visible = true;
+            }
+            else
+            {
+                groupBoxUserSettings.Visible = false;
+            }
         }
     }
 }

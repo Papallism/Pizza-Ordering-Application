@@ -38,7 +38,7 @@ namespace PizzaOrderingApplication
             this.dataGridViewToppingsSettings = new System.Windows.Forms.DataGridView();
             this.buttonResetToppings = new System.Windows.Forms.Button();
             this.buttonSaveToppings = new System.Windows.Forms.Button();
-            this.groupBoxUsers = new System.Windows.Forms.GroupBox();
+            this.groupBoxUserSettings = new System.Windows.Forms.GroupBox();
             this.dataGridViewUserSettings = new System.Windows.Forms.DataGridView();
             this.buttonResetUser = new System.Windows.Forms.Button();
             this.buttonSaveUser = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@ namespace PizzaOrderingApplication
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSizeSettings)).BeginInit();
             this.groupBoxToppingsSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewToppingsSettings)).BeginInit();
-            this.groupBoxUsers.SuspendLayout();
+            this.groupBoxUserSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUserSettings)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,17 +140,17 @@ namespace PizzaOrderingApplication
             this.buttonSaveToppings.UseVisualStyleBackColor = true;
             this.buttonSaveToppings.Click += new System.EventHandler(this.buttonSaveToppings_Click);
             // 
-            // groupBoxUsers
+            // groupBoxUserSettings
             // 
-            this.groupBoxUsers.Controls.Add(this.dataGridViewUserSettings);
-            this.groupBoxUsers.Controls.Add(this.buttonResetUser);
-            this.groupBoxUsers.Controls.Add(this.buttonSaveUser);
-            this.groupBoxUsers.Location = new System.Drawing.Point(794, 12);
-            this.groupBoxUsers.Name = "groupBoxUsers";
-            this.groupBoxUsers.Size = new System.Drawing.Size(378, 426);
-            this.groupBoxUsers.TabIndex = 3;
-            this.groupBoxUsers.TabStop = false;
-            this.groupBoxUsers.Text = "Users";
+            this.groupBoxUserSettings.Controls.Add(this.dataGridViewUserSettings);
+            this.groupBoxUserSettings.Controls.Add(this.buttonResetUser);
+            this.groupBoxUserSettings.Controls.Add(this.buttonSaveUser);
+            this.groupBoxUserSettings.Location = new System.Drawing.Point(794, 12);
+            this.groupBoxUserSettings.Name = "groupBoxUserSettings";
+            this.groupBoxUserSettings.Size = new System.Drawing.Size(378, 426);
+            this.groupBoxUserSettings.TabIndex = 3;
+            this.groupBoxUserSettings.TabStop = false;
+            this.groupBoxUserSettings.Text = "Users";
             // 
             // dataGridViewUserSettings
             // 
@@ -190,18 +190,19 @@ namespace PizzaOrderingApplication
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1185, 450);
-            this.Controls.Add(this.groupBoxUsers);
+            this.Controls.Add(this.groupBoxUserSettings);
             this.Controls.Add(this.groupBoxToppingsSettings);
             this.Controls.Add(this.groupBoxSizeSettings);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PizzaSettingsForm";
             this.Text = "Settings Window";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PizzaSettingsForm_FormClosing);
+            this.Load += new System.EventHandler(this.PizzaSettingsForm_Load);
             this.groupBoxSizeSettings.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSizeSettings)).EndInit();
             this.groupBoxToppingsSettings.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewToppingsSettings)).EndInit();
-            this.groupBoxUsers.ResumeLayout(false);
+            this.groupBoxUserSettings.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUserSettings)).EndInit();
             this.ResumeLayout(false);
 
@@ -217,7 +218,7 @@ namespace PizzaOrderingApplication
         private System.Windows.Forms.DataGridView dataGridViewToppingsSettings;
         private System.Windows.Forms.Button buttonResetToppings;
         private System.Windows.Forms.Button buttonSaveToppings;
-        private System.Windows.Forms.GroupBox groupBoxUsers;
+        private System.Windows.Forms.GroupBox groupBoxUserSettings;
         private System.Windows.Forms.DataGridView dataGridViewUserSettings;
         private System.Windows.Forms.Button buttonResetUser;
         private System.Windows.Forms.Button buttonSaveUser;
